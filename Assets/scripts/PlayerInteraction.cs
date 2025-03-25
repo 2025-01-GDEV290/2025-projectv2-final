@@ -11,7 +11,7 @@ public class PlayerInteraction : MonoBehaviour
     private void Update()
     {
         // When the player presses the 'E' key (you can change the key as needed)
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E)) 
         {
             TryTeleport();
         }
@@ -35,7 +35,7 @@ public class PlayerInteraction : MonoBehaviour
         if (teleportTarget != null)
         {
             Debug.Log("Attempting to teleport to: " + teleportTarget.position);
-
+            
             // Get the CharacterController component
             CharacterController characterController = GetComponent<CharacterController>();
 
