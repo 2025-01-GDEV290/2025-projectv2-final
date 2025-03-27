@@ -5,6 +5,7 @@ using UnityEngine;
 public class ClimbRB : MonoBehaviour
 {
     public float climbSpeed = 3f;
+    [SerializeField]
     private bool isClimbing = false;
     private bool nearLadder = false;
     private Rigidbody rb;
@@ -20,6 +21,7 @@ public class ClimbRB : MonoBehaviour
     {
         if (isClimbing)
         {
+            Debug.Log("I am Climbing!" + Time.time);
 
             Physics.gravity = Vector3.zero;
 
@@ -31,22 +33,41 @@ public class ClimbRB : MonoBehaviour
 
             Physics.gravity = originalGravity;
         }
+
+
+
     }
 
 
     void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other.gameObject.tag);
         if (other.CompareTag("Ladder"))
         {
+            Debug.Log("I'm near the LADDER");
+            isClimbing = true;
             nearLadder = true;
         }
+
+        if (nearLadder && Input.GetButton("Climb"))
+        {
+            Debug.Log("Climb Button Recognized in OnTriggerEnter");
+            isClimbing = true;
+        }
+        else
+        {
+            isClimbing = false;
+        }
     }
+
+
 
     void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Ladder"))
         {
             nearLadder = false;
+            isClimbing = false;
         }
     }
 
@@ -54,6 +75,7 @@ public class ClimbRB : MonoBehaviour
     {
         if (nearLadder && Input.GetButton("Climb"))
         {
+            Debug.Log("Climb Button Recognized");
             isClimbing = true;
         }
         else

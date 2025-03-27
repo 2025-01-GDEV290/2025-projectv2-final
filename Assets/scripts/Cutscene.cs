@@ -15,7 +15,7 @@ public class Cutscene : MonoBehaviour
     private int index = 0;           
     public Button rightArrowButton;  
 
-    public string sceneName = "BattleScene";  
+    public string sceneName = "GameScene";  
    
     public delegate void OnCutsceneComplete();
     public event OnCutsceneComplete CutsceneComplete;
