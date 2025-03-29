@@ -621,8 +621,8 @@ Transform:
   m_GameObject: {fileID: 874117150}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 75.76, y: 1.753, z: 33.21}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 75.76, y: 2.19, z: 33.21}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -646,8 +646,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.3433304, y: 1.2138252, z: 1.9987869}
-  m_Center: {x: -0.17872238, y: 0.10691261, z: 0.028076172}
+  m_Size: {x: 2.7604828, y: 1.2138252, z: 2.7615404}
+  m_Center: {x: 0.01474762, y: 0.10691261, z: 0.1130538}
 --- !u!114 &874117156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1038,9 +1038,10 @@ GameObject:
   - component: {fileID: 1433257017}
   - component: {fileID: 1433257019}
   - component: {fileID: 1433257020}
+  - component: {fileID: 1433257021}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1186,8 +1187,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3719abfb4a032341ad82973cab44a5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  jumpHeight: 5
+  moveSpeed: 8
+  jumpHeight: 7
   groundCheck: {fileID: 175139800}
   groundLayer:
     serializedVersion: 2
@@ -1206,6 +1207,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   climbSpeed: 5
   isClimbing: 0
+--- !u!114 &1433257021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433257004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4105cea0c1f77af468f234394719ed7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleportTarget: {fileID: 1566290114}
+  interactionRange: 3
+  interactableTag: Interactable
+  ignoreLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &1453709768
 GameObject:
   m_ObjectHideFlags: 0
@@ -1407,8 +1426,8 @@ Transform:
   m_GameObject: {fileID: 1566290110}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 241.85, y: 111.56, z: 219.6391}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 241.85, y: 113.16, z: 226.03}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1424,7 +1443,7 @@ GameObject:
   - component: {fileID: 1836717521}
   - component: {fileID: 1836717520}
   - component: {fileID: 1836717519}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
