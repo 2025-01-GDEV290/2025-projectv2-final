@@ -26,7 +26,9 @@ public class ClimbRB : MonoBehaviour
             Physics.gravity = Vector3.zero;
 
             float verticalInput = Input.GetAxis("Vertical");
+            
             rb.velocity = new Vector3(rb.velocity.x, verticalInput * climbSpeed, rb.velocity.z);
+
         }
         else
         {
