@@ -22,7 +22,7 @@ public class Dialogue : MonoBehaviour
     {
         switch (other.tag){
             case "Milkman":
-                dialogue.text = "I am the milkman";
+                dialogue.text = "I am the milkman. MORE TEXT. MORE TEXT. There is so much text in here to test the text boxes so there will be LOTS OF TEXT BIIIIIG TEXT yes so much text so much text yes yes yes yes yes yes yes I am the milk man";
                 dialogue_box.SetActive(true);
                 break;
             
