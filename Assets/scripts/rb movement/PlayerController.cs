@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
     public Transform groundCheck;
     public LayerMask groundLayer;
+    public Rigidbody rb;
 
     private void Update()
     {
@@ -23,6 +24,8 @@ public class PlayerController : MonoBehaviour
 
         Vector3 move = transform.right * moveX + transform.forward * moveZ;
         transform.Translate(move, Space.World);
+        //rb.MovePosition(move);
+
     }
 
     void Jump()
