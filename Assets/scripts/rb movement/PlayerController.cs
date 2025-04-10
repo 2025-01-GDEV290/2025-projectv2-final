@@ -9,8 +9,14 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
     public Transform groundCheck;
     public LayerMask groundLayer;
-    public Rigidbody rb;
 
+    private Rigidbody rb;
+
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
     private void Update()
     {
         MovePlayer();
@@ -19,13 +25,19 @@ public class PlayerController : MonoBehaviour
 
     void MovePlayer()
     {
-        float moveX = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
-        float moveZ = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
+        float moveX = Input.GetAxis("Horizontal");
+        float moveZ = Input.GetAxis("Vertical");
+
+        //Debug.LogFormat("RigidBody {0}  movex:{1}  movez:{2}", rb.name, moveX, moveZ);
 
         Vector3 move = transform.right * moveX + transform.forward * moveZ;
-        transform.Translate(move, Space.World);
-        //rb.MovePosition(move);
+        Debug.LogFormat("MoveVector {0} ", move);
 
+        Vector3 velocity = move * moveSpeed;
+        Debug.LogFormat("Velocity {0} ", velocity);
+
+        rb.velocity = new
+            Vector3(velocity.x, rb.velocity.y, velocity.z);
     }
 
     void Jump()
