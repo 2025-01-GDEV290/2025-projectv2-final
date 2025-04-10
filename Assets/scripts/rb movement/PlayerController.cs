@@ -31,10 +31,10 @@ public class PlayerController : MonoBehaviour
         //Debug.LogFormat("RigidBody {0}  movex:{1}  movez:{2}", rb.name, moveX, moveZ);
 
         Vector3 move = transform.right * moveX + transform.forward * moveZ;
-        Debug.LogFormat("MoveVector {0} ", move);
+        
 
         Vector3 velocity = move * moveSpeed;
-        Debug.LogFormat("Velocity {0} ", velocity);
+        
 
         rb.velocity = new
             Vector3(velocity.x, rb.velocity.y, velocity.z);
