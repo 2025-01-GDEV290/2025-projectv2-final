@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5f;
+    public float sprintMultiplier = 1f;
     public float jumpHeight = 5f;
     private bool isGrounded;
     public Transform groundCheck;
@@ -12,10 +13,17 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody rb;
 
+    public GliderRB glidingScript;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+        if (glidingScript != null)
+
+        {
+            glidingScript.enabled = false;
+        }
     }
     private void Update()
     {
@@ -28,25 +36,29 @@ public class PlayerController : MonoBehaviour
         float moveX = Input.GetAxis("Horizontal");
         float moveZ = Input.GetAxis("Vertical");
 
-        //Debug.LogFormat("RigidBody {0}  movex:{1}  movez:{2}", rb.name, moveX, moveZ);
-
         Vector3 move = transform.right * moveX + transform.forward * moveZ;
-        
 
-        Vector3 velocity = move * moveSpeed;
-        
+        // Sprint check
+        float currentSpeed = moveSpeed;
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            currentSpeed *= sprintMultiplier;
+        }
 
-        rb.velocity = new
-            Vector3(velocity.x, rb.velocity.y, velocity.z);
+        Vector3 velocity = move * currentSpeed;
+
+        rb.velocity = new Vector3(velocity.x, rb.velocity.y, velocity.z);
     }
 
     void Jump()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, 0.3f, groundLayer);
-        if (isGrounded && Input.GetKeyDown(KeyCode.Space))
+
+        
+        if (isGrounded && Mathf.Abs(rb.velocity.y) < 0.01f && Input.GetKeyDown(KeyCode.Space))
         {
-            GetComponent<Rigidbody>().AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
+            rb.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
         }
     }
-   
+
 }
