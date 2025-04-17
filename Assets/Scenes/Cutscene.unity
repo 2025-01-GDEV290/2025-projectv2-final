@@ -385,7 +385,7 @@ MonoBehaviour:
   - 'To do so, they will have to scale the treacherous mountain, facing the dangers
     that await at its peak.  '
   rightArrowButton: {fileID: 2041429368}
-  sceneName: GameScene
+  sceneName: GameplayScene
 --- !u!4 &319975674
 Transform:
   m_ObjectHideFlags: 0
