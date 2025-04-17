@@ -926,12 +926,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 388841620}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.43604538, z: -0, w: 0.89992464}
-  m_LocalPosition: {x: 39.47812, y: -18.512817, z: 38.233047}
+  m_LocalRotation: {x: -0, y: 0.4360454, z: -0, w: 0.8999247}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1941668321}
+  m_Father: {fileID: 568905589}
   m_LocalEulerAnglesHint: {x: 0, y: 51.704, z: 0}
 --- !u!65 &388841622
 BoxCollider:
@@ -1099,6 +1099,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 551714401}
   m_CullTransparentMesh: 1
+--- !u!1 &568905588
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 568905589}
+  m_Layer: 0
+  m_Name: first climbing wall
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &568905589
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568905588}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 282.8781, y: 116.58719, z: 247.73305}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 871859404}
+  - {fileID: 388841621}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705907921
 GameObject:
   m_ObjectHideFlags: 0
@@ -1321,11 +1354,11 @@ Transform:
   m_GameObject: {fileID: 871859403}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.45233566, z: -0, w: 0.8918478}
-  m_LocalPosition: {x: 39.913544, y: -18.512817, z: 38.485962}
+  m_LocalPosition: {x: 0.4354248, y: 0, z: 0.25291443}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1941668321}
+  m_Father: {fileID: 568905589}
   m_LocalEulerAnglesHint: {x: 0, y: 53.787, z: 0}
 --- !u!65 &871859405
 BoxCollider:
@@ -3373,7 +3406,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1941668321}
   m_Layer: 0
-  m_Name: climbing walls
+  m_Name: second climbing wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3396,8 +3429,6 @@ Transform:
   - {fileID: 1156890618}
   - {fileID: 953815947}
   - {fileID: 267722104}
-  - {fileID: 871859404}
-  - {fileID: 388841621}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2028170306
@@ -3924,3 +3955,4 @@ SceneRoots:
   - {fileID: 1941668321}
   - {fileID: 1309377225}
   - {fileID: 1343850507}
+  - {fileID: 568905589}
