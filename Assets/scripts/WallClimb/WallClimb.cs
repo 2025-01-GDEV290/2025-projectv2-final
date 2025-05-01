@@ -32,7 +32,7 @@ public class WallClimb : MonoBehaviour
             rb.useGravity = true;
         }
     }
-
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Wall"))
@@ -49,4 +49,5 @@ public class WallClimb : MonoBehaviour
             isInClimbZone = false;
         }
     }
+
 }
