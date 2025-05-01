@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class WallClimb : MonoBehaviour
@@ -40,6 +41,7 @@ public class WallClimb : MonoBehaviour
         }
     }
 
+   
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Wall"))
