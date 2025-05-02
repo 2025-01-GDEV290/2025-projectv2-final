@@ -614,7 +614,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -863,7 +863,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 574.77, y: -513.96}
+  m_AnchoredPosition: {x: 817, y: -483}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1372639712
@@ -980,12 +980,18 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7a8c0272cf6a27e41afa630f1e5e550f, type: 3}
   - {fileID: 21300000, guid: 52c842f75bc6860488eaaa7657e7836f, type: 3}
   texts:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - 'At the peak of the mountain, the adventurer finds the bird standing guard over
+    the golden egg. Its feathers catch the wind as it watches silently. '
+  - 'The player steps forward. The egg reflects the sunlight, casting a warm glow
+    across the sky. '
+  - 'With steady hands, the adventurer gently places the egg into his backpack. It''s
+    time to bring it home. '
+  - The bird lowers its wings, allowing the player to climb on. Together, they glide
+    down the mountain.
+  - As they land, the village comes into view. The townspeople gather, waiting for
+    the return of their treasured egg.
+  - "Cheers fill the air as the villagers celebrate the adventurer\u2019s bravery.
+    The egg is home safe."
   rightArrowButton: {fileID: 1304603767}
   sceneName: End Screen
 --- !u!4 &1392004481
