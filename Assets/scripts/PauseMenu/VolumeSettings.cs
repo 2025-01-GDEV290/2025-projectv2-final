@@ -5,26 +5,39 @@ using UnityEngine.UI;
 
 public class VolumeSettings : MonoBehaviour
 {
-    public Slider volumeSlider;  // Drag your slider here
-    public AudioSource backgroundMusic;  // If you have a specific audio source for music
+    [Header("Sliders")]
+    public Slider ambientSlider;   // Controls ambient volume
+    public Slider gameMusicSlider; // Controls game music volume
+
+    [Header("Audio Sources")]
+    public AudioSource ambientMusicSource;   // Ambient music audio source
+    public AudioSource gameMusicSource;      // Game music audio source
 
     private void Start()
     {
-        // Initialize slider value with the current volume
-        volumeSlider.value = AudioListener.volume;
+        // Initialize slider values
+        if (ambientSlider != null && ambientMusicSource != null)
+        {
+            ambientSlider.value = ambientMusicSource.volume;
+            ambientSlider.onValueChanged.AddListener(UpdateAmbientVolume);
+        }
 
-        // Add listener to adjust volume when the slider value changes
-        volumeSlider.onValueChanged.AddListener(UpdateVolume);
+        if (gameMusicSlider != null && gameMusicSource != null)
+        {
+            gameMusicSlider.value = gameMusicSource.volume;
+            gameMusicSlider.onValueChanged.AddListener(UpdateGameMusicVolume);
+        }
     }
 
-    // This function gets called when the slider value changes
-    public void UpdateVolume(float volume)
+    public void UpdateAmbientVolume(float volume)
     {
-        AudioListener.volume = volume;  // Set the global volume level
+        if (ambientMusicSource != null)
+            ambientMusicSource.volume = volume;
+    }
 
-        if (backgroundMusic != null)
-        {
-            backgroundMusic.volume = volume;  // If you want to adjust a specific AudioSource, like background music
-        }
+    public void UpdateGameMusicVolume(float volume)
+    {
+        if (gameMusicSource != null)
+            gameMusicSource.volume = volume;
     }
 }
